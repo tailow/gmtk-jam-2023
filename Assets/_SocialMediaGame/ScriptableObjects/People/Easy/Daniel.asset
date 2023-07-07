@@ -15,3 +15,8 @@ MonoBehaviour:
   personName: Daniel
   personSprite: {fileID: 0}
   globalDrainRate: 1
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    drainRate: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    drainRate: 0
