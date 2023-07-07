@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b613096e24d254eafaae3a39ce7591, type: 3}
   m_Name: Art
   m_EditorClassIdentifier: 
-  traitName: 
-  traitColor: {r: 0, g: 0, b: 0, a: 0}
+  traitName: Art
+  color: {r: 0, g: 0, b: 0, a: 0}

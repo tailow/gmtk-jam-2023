@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cats
   m_EditorClassIdentifier: 
   traitName: Cats
-  traitColor: {r: 0.7273856, g: 0.40392157, b: 0.8, a: 0}
+  color: {r: 0.7743048, g: 0.40743, b: 0.81, a: 0}

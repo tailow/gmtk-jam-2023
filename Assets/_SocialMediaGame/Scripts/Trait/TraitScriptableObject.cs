@@ -5,5 +5,5 @@ public class TraitScriptableObject : ScriptableObject
 {
     public string traitName;
 
-    public Color traitColor;
+    public Color color;
 }

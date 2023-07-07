@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Person", menuName = "ScriptableObjects/Person")]
-public class PersonSriptableObject : ScriptableObject
+public class PersonScriptableObject : ScriptableObject
 {
     [System.Serializable]
-    public class Trait
+    public class PersonalTrait
     {
         public TraitScriptableObject traitScriptableObject;
 
@@ -14,9 +14,9 @@ public class PersonSriptableObject : ScriptableObject
     
     public string personName;
 
-    public Sprite personSprite;
+    public Sprite sprite;
 
     public float globalDrainRate;
     
-    public List<Trait> traits;
+    public List<PersonalTrait> traits;
 }
