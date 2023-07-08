@@ -16,22 +16,26 @@ public class PersonCard : MonoBehaviour
 
     private void Start()
     {
-        _nameText.text = PersonData.personName;
+        UpdatePersonCard(PersonData);
+    }
+
+    public void UpdatePersonCard(PersonScriptableObject personData){
+        _nameText.text = personData.personName;
         
         // check if anything gets dropped on this, should probably check which object gets dropped
         GetComponent<DropTarget>().DropEvent.AddListener(ConsumeContent);
 
-        if (PersonData.sprite != null)
+        if (personData.sprite != null)
         {
-            _personImage.sprite = PersonData.sprite;
+            _personImage.sprite = personData.sprite;
         }
 
         // Loop through trait objects and apply values from scriptable object
         for (int i = 0; i < _traitParent.childCount; i++)
         {
-            if (i < PersonData.traits.Count)
+            if (i < personData.traits.Count)
             {
-                _traitParent.GetChild(i).GetComponent<TraitUpdater>().InitializeTrait(PersonData.traits[i]);
+                _traitParent.GetChild(i).GetComponent<TraitUpdater>().InitializeTrait(personData.traits[i]);
                 
                 _traitParent.GetChild(i).gameObject.SetActive(true);
             }
@@ -41,9 +45,9 @@ public class PersonCard : MonoBehaviour
                 _traitParent.GetChild(i).gameObject.SetActive(false); // if there are too many trait objects
             }
         }
-        if(PersonData.icon != null)
+        if(personData.icon != null)
         {
-            _iconImage.sprite = PersonData.icon;
+            _iconImage.sprite = personData.icon;
             // also set iconimages alpha to be 1
             _iconImage.color = new Color(_iconImage.color.r, _iconImage.color.g, _iconImage.color.b, 1);
 
