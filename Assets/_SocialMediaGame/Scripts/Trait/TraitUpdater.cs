@@ -20,8 +20,8 @@ public class TraitUpdater : MonoBehaviour
 
     Vector3 pointA;
     Vector3 pointB;
-    GameObject card;
-    
+    Transform card;
+
     void Start () {
         card = gameObject.transform.parent.transform.parent;
         pointA = transform.eulerAngles + new Vector3 (0f, 0f, 30f);
