@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: GamingDog
   m_EditorClassIdentifier: 
-  title: 
+  title: HellDog
   description: 
-  sprite: {fileID: 0}
-  traits: []
+  sprite: {fileID: 21300000, guid: 8d96fef046e74844390366a570f5f87e, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+    weight: 1

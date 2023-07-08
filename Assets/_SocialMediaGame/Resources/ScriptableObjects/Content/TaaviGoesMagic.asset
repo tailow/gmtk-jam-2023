@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Bark! Bark!
   description: '#bones'
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 709632fe9128e1d41af311c3c0407fb0, type: 3}
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
     weight: 1
