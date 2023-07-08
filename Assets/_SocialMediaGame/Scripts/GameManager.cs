@@ -4,8 +4,8 @@ using FMODUnity;
 using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
-    [HideInInspector]
-    public GameObject CurrentDraggingObject;
+    //[HideInInspector]
+    //public GameObject CurrentDraggingObject;
 
     [SerializeField]
     private GameObject _contentCardPrefab;

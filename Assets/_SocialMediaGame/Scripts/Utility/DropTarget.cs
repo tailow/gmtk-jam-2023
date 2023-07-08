@@ -12,7 +12,7 @@ public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (_highlightWithoutDraggingObject || GameManager.Instance.CurrentDraggingObject != null)
+        if (_highlightWithoutDraggingObject || eventData.pointerDrag)
         {
             MouseEnterEvent?.Invoke();
         }
@@ -20,7 +20,7 @@ public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (_highlightWithoutDraggingObject || GameManager.Instance.CurrentDraggingObject != null)
+        if (_highlightWithoutDraggingObject || eventData.pointerDrag)
         {
             MouseExitEvent?.Invoke();
         }
@@ -29,9 +29,7 @@ public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     // gets executed when dropping held object onto this target
     public void OnDrop(PointerEventData eventData)
     {
-        DropEvent?.Invoke(GameManager.Instance.CurrentDraggingObject); // pass dropped object as parameter
+        DropEvent?.Invoke(eventData.pointerDrag); // pass dropped object as parameter
         MouseExitEvent?.Invoke();
-        
-        GameManager.Instance.CurrentDraggingObject = null;
     }
 }
