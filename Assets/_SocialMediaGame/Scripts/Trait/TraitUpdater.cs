@@ -6,8 +6,12 @@ public class TraitUpdater : MonoBehaviour
 {
     [SerializeField] private TMP_Text _traitName;
     [SerializeField] private Slider _traitSlider;
+    [SerializeField] private Slider _traitHighlightSlider;
     [SerializeField] private Image _traitBackgroundImage;
     [SerializeField] private Image _traitFillImage;
+    [SerializeField] private Image _traitHighlightFillImage;
+
+    [SerializeField] private float _traitFillSpeed;
 
     public TraitScriptableObject TraitScriptableObject;
 
@@ -31,6 +35,9 @@ public class TraitUpdater : MonoBehaviour
     private void Update()
     {
         UpdateTraitValue(-_traitDrain * GameManager.Instance.TraitDrainMultiplier * 0.1f * Time.deltaTime); // trait drain
+
+        _traitSlider.value = Mathf.Lerp(_traitSlider.value, _traitValue, Time.deltaTime * _traitFillSpeed);
+        
         _time += Time.deltaTime;
 
         if (_isFlashingRed)
@@ -50,6 +57,8 @@ public class TraitUpdater : MonoBehaviour
 
     public void InitializeTrait(PersonScriptableObject.PersonalTrait traitData)
     {
+        float hue, saturation, value;
+        
         TraitScriptableObject = traitData.traitScriptableObject;
 
         _traitDrain = traitData.drainRate;
@@ -59,12 +68,13 @@ public class TraitUpdater : MonoBehaviour
         // set alpha to 1
         traitColor = TraitScriptableObject.color;
         traitColor.a = 1;
-        _traitFillImage.color = traitColor;
-
-        // Darken trait bar background
-        float hue, saturation, value;
         Color.RGBToHSV(TraitScriptableObject.color, out hue, out saturation, out value);
-        _traitBackgroundImage.color = Color.HSVToRGB(hue, saturation, 0.6f);
+        
+        traitColor = Color.HSVToRGB(hue, 0.5f, 0.9f);;
+        
+        _traitFillImage.color = Color.HSVToRGB(hue, 0.5f, 0.9f);
+        _traitHighlightFillImage.color = Color.HSVToRGB(hue, 0.5f, 0.8f);
+        _traitBackgroundImage.color = Color.HSVToRGB(hue, 0.5f, 0.6f);
 
         SetTraitValue(1f);
     }
@@ -81,7 +91,7 @@ public class TraitUpdater : MonoBehaviour
 
         _traitValue = Mathf.Clamp01(_traitValue); ;
 
-        _traitSlider.value = _traitValue;
+        _traitHighlightSlider.value = _traitValue;
 
         if (_traitValue <= 0)
         {
@@ -92,7 +102,8 @@ public class TraitUpdater : MonoBehaviour
     public void SetTraitValue(float value)
     {
         _traitValue = Mathf.Clamp01(value);
-
+        
+        _traitHighlightSlider.value = _traitValue;
         _traitSlider.value = _traitValue;
     }
 
