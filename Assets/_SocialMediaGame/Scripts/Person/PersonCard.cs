@@ -14,6 +14,8 @@ public class PersonCard : MonoBehaviour
     [SerializeField] private Image _iconImage;
     [SerializeField] private Transform _traitParent;
 
+    private string wrongSound = "incorrect";
+    private string correctSound = "correct";
     public void UpdatePersonCard(PersonScriptableObject personData){
         _nameText.text = personData.personName;
         
@@ -83,6 +85,9 @@ public class PersonCard : MonoBehaviour
                 Debug.Log("Decreasing trait value");
                 trait.GetComponent<TraitUpdater>().UpdateTraitValue(weightedTraitValueDecrease);
             }
+            GameManager.Instance.PlaySound(wrongSound);
+        }else{
+            GameManager.Instance.PlaySound(correctSound);
         }
 
         GameManager.Instance.ReplaceContentCard();

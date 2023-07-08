@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using FMODUnity;
 public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
@@ -153,5 +153,10 @@ public class GameManager : Singleton<GameManager>
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public void PlaySound(string eventName)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/" + eventName);
     }
 }
