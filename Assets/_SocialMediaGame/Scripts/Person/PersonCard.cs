@@ -14,11 +14,6 @@ public class PersonCard : MonoBehaviour
     [SerializeField] private Image _iconImage;
     [SerializeField] private Transform _traitParent;
 
-    private void Start()
-    {
-        UpdatePersonCard(PersonData);
-    }
-
     public void UpdatePersonCard(PersonScriptableObject personData){
         _nameText.text = personData.personName;
         

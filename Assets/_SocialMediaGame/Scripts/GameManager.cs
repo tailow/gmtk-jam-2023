@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -13,33 +14,52 @@ public class GameManager : Singleton<GameManager>
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
+    private int LOWEST_DIFFICULTY = 0;
+    private int HIGHEST_DIFFICULTY = 2;
     private float playerSpawnTimer = 0f;
     private int playerCount = 0;
+    List<GameObject> playerList = new List<GameObject>();
 
     private Object[] _contentScriptableObjects;
-    private Object[] _easyPersonScriptableObjects;
-    private Object[] _mediumPersonScriptableObjects;
-    private Object[] _hardPersonScriptableObjects;
+    private PersonScriptableObject[] _easyPersonScriptableObjects;
+    private PersonScriptableObject[] _mediumPersonScriptableObjects;
+    private PersonScriptableObject[] _hardPersonScriptableObjects;
 
     private void Start()
     {
         Random.InitState(System.DateTime.Now.Millisecond);
         // apparently not recommended, but it works, loads all scriptable objects into array
         _contentScriptableObjects = Resources.LoadAll("ScriptableObjects/Content", typeof(ContentScriptableObject));
-        // yeah we will still do this for now
-        _easyPersonScriptableObjects = Resources.LoadAll("ScriptableObjects/People/Easy", typeof(PersonScriptableObject));
-        Debug.Log(_easyPersonScriptableObjects.Length);
-        _mediumPersonScriptableObjects = Resources.LoadAll("ScriptableObjects/People/Medium", typeof(PersonScriptableObject));
-        _hardPersonScriptableObjects = Resources.LoadAll("ScriptableObjects/People/Hard", typeof(PersonScriptableObject));
+        _easyPersonScriptableObjects = Resources.LoadAll<PersonScriptableObject>("ScriptableObjects/People/Easy");
+        _mediumPersonScriptableObjects = Resources.LoadAll<PersonScriptableObject>("ScriptableObjects/People/Medium");
+        _hardPersonScriptableObjects = Resources.LoadAll<PersonScriptableObject>("ScriptableObjects/People/Hard");
 
         InstantiatePlayerCard(0);
     }
 
     private void Update() {
         playerSpawnTimer += Time.deltaTime;
+
+        // spawn a new player every 30 seconds
+        // if player list full despawn one player
         if(playerSpawnTimer > 30 && playerCount < 3){
             playerSpawnTimer = 0;
-            InstantiatePlayerCard(0);
+            InstantiatePlayerCard(Random.Range(0, 2));
+        }
+        if(playerSpawnTimer > 60){
+            // remove random player and then spawn a new one 
+            playerSpawnTimer = 0;
+            int randomPlayer = Random.Range(0, playerCount);
+            // remove from list
+            Destroy(playerList[randomPlayer]);
+
+            // increase difficulty
+            // maybe add global drain also here
+            if(LOWEST_DIFFICULTY < HIGHEST_DIFFICULTY){
+                LOWEST_DIFFICULTY += 1;
+            }
+
+            playerCount--;
         }
     }
 
@@ -56,25 +76,23 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void InstantiatePlayerCard(int difficulty){
-        // instantiate player card inside of the playercard grid objects grid component
         GameObject playerCardObject = Instantiate(_playerCardPrefab, _playerCardGrid);
+        playerList.Add(playerCardObject);
         playerCount++;
 
-        // pick random content card from scriptable objects
-        // FOR SOME REASON RANDOM.RANGE IS NOT RANDOM AND ALWAYS GIVES TEH SAME PERSON THE FIRST TIME ROUND.
         PersonScriptableObject randomPersonData;
         switch(difficulty){
             case 0:
-                randomPersonData = (PersonScriptableObject)_easyPersonScriptableObjects[Random.Range(0, _easyPersonScriptableObjects.Length)];
+                randomPersonData = _easyPersonScriptableObjects[Random.Range(0, _easyPersonScriptableObjects.Length)];
                 break;
             case 1:
-                randomPersonData = (PersonScriptableObject)_mediumPersonScriptableObjects[Random.Range(0, _mediumPersonScriptableObjects.Length)];
+                randomPersonData = _mediumPersonScriptableObjects[Random.Range(0, _mediumPersonScriptableObjects.Length)];
                 break;
             case 2:
-                randomPersonData = (PersonScriptableObject)_hardPersonScriptableObjects[Random.Range(0, _hardPersonScriptableObjects.Length)];
+                randomPersonData = _hardPersonScriptableObjects[Random.Range(0, _hardPersonScriptableObjects.Length)];
                 break;
             default:
-                randomPersonData = (PersonScriptableObject)_easyPersonScriptableObjects[Random.Range(0, _easyPersonScriptableObjects.Length)];
+                randomPersonData = _easyPersonScriptableObjects[Random.Range(0, _easyPersonScriptableObjects.Length)];
                 break;
         }
         
@@ -87,7 +105,7 @@ public class GameManager : Singleton<GameManager>
             _contentCardParent);
 
         // pick random content card from scriptable objects
-        ContentScriptableObject randomContentData = (ContentScriptableObject)_contentScriptableObjects[Random.Range(0, _contentScriptableObjects.Length)];
+        ContentScriptableObject randomContentData = (ContentScriptableObject)_contentScriptableObjects[Random.Range(0, _contentScriptableObjects.Length - 1)];
         
         contentCardObject.GetComponent<ContentCard>().UpdateContentCard(randomContentData);
     }
