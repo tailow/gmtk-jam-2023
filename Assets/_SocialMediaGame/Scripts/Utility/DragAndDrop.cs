@@ -1,19 +1,36 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] private float _dampingSpeed = .05f;
+    
     private RectTransform _draggingObject;
     private CanvasGroup _canvasGroup;
     
     public UnityEvent EnableHighlightEvent;
     public UnityEvent DisableHighlightEvent;
 
+    private Vector3 _desiredPosition;
+    private Vector3 _velocity;
+
     private void Awake()
     {
         _draggingObject = transform as RectTransform;
         _canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void Start()
+    {
+        _desiredPosition = transform.parent.position;
+    }
+
+    private void Update()
+    {
+        _draggingObject.position =
+            Vector3.SmoothDamp(_draggingObject.position, _desiredPosition, ref _velocity, _dampingSpeed);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -22,7 +39,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(_draggingObject, eventData.position,
                 eventData.pressEventCamera, out var globalMousePosition))
         {
-            _draggingObject.position = globalMousePosition;
+            _desiredPosition = globalMousePosition;
         }
     }
 
@@ -32,7 +49,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(_draggingObject, eventData.position,
                 eventData.pressEventCamera, out var globalMousePosition))
         {
-            _draggingObject.position = globalMousePosition;
+            _desiredPosition = globalMousePosition;
         }
 
         _draggingObject.localScale *= 1.1f;
@@ -48,8 +65,9 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     {
         // stop dragging object, reset back to default position
         _draggingObject.localScale = Vector3.one;
-        _draggingObject.localPosition = Vector3.zero;
 
+        _desiredPosition = transform.parent.position;
+        
         _canvasGroup.blocksRaycasts = true;
 
         //GameManager.Instance.CurrentDraggingObject = null;   // we should probably do this, but it gets executed before drop event
