@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cars
   m_EditorClassIdentifier: 
   traitName: Cars
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.25503615, g: 0.504, b: 0.49185544, a: 0}

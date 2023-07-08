@@ -16,6 +16,8 @@ public class PersonScriptableObject : ScriptableObject
 
     public Sprite sprite;
 
+    public Sprite icon;
+
     public float globalDrainRate;
     
     public List<PersonalTrait> traits;

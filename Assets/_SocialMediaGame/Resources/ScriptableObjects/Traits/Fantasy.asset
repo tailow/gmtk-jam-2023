@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fantasy
   m_EditorClassIdentifier: 
   traitName: Fantasy
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.5255006, g: 0.31305623, b: 0.6320754, a: 0}

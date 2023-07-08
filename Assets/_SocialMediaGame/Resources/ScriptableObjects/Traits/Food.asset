@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   traitName: Food
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.36061934, g: 0.4245283, b: 0.11814703, a: 0}

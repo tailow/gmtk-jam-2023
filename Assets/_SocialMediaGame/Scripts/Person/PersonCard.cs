@@ -11,6 +11,7 @@ public class PersonCard : MonoBehaviour
     
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private Image _personImage;
+    [SerializeField] private Image _iconImage;
     [SerializeField] private Transform _traitParent;
 
     private void Start()
@@ -39,6 +40,13 @@ public class PersonCard : MonoBehaviour
             {
                 _traitParent.GetChild(i).gameObject.SetActive(false); // if there are too many trait objects
             }
+        }
+        if(PersonData.icon != null)
+        {
+            _iconImage.sprite = PersonData.icon;
+            // also set iconimages alpha to be 1
+            _iconImage.color = new Color(_iconImage.color.r, _iconImage.color.g, _iconImage.color.b, 1);
+
         }
     }
 

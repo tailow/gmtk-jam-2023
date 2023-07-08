@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sports
   m_EditorClassIdentifier: 
   traitName: Sports
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.66438025, g: 0.70199996, b: 0.34768865, a: 0}

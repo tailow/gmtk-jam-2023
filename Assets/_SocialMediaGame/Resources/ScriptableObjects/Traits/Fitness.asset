@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fitness
   m_EditorClassIdentifier: 
   traitName: Fitness
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.3743511, g: 0.3504361, b: 0.7075472, a: 0}

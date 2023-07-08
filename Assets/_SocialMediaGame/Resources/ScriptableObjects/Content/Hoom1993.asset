@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: Hoom1993
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: Zoom1993
+  description: '#headshot'
+  sprite: {fileID: 21300000, guid: 67e1c324f886c1a42aec9411e7828a97, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
+    weight: 0.5
+  - traitScriptableObject: {fileID: 11400000, guid: 86d9aeddce041a944b146d89b3f75108, type: 2}
+    weight: 0.5

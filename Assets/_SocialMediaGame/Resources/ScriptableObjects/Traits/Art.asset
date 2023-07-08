@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Art
   m_EditorClassIdentifier: 
   traitName: Art
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.6226415, g: 0.31425774, b: 0.5029588, a: 0}
