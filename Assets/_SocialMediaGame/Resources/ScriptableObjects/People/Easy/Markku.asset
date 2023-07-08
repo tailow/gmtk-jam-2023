@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Markku
   m_EditorClassIdentifier: 
   personName: Markku
-  personSprite: {fileID: 0}
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   globalDrainRate: 1
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
     drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
-    drainRate: 1
+    drainRate: 1.5
   - traitScriptableObject: {fileID: 11400000, guid: 86d9aeddce041a944b146d89b3f75108, type: 2}
     drainRate: 1

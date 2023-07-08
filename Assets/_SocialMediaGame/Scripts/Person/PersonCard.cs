@@ -16,6 +16,9 @@ public class PersonCard : MonoBehaviour
     private void Start()
     {
         _nameText.text = PersonData.personName;
+        
+        // check if anything gets dropped on this, should probably check which object gets dropped
+        GetComponent<DropTarget>().DropEvent.AddListener(ConsumeContent);
 
         if (PersonData.sprite != null)
         {
@@ -27,15 +30,42 @@ public class PersonCard : MonoBehaviour
         {
             if (i < PersonData.traits.Count)
             {
-                _traitParent.GetChild(i).GetComponent<TraitUpdater>().InitializeTrait(PersonData.traits[i].traitScriptableObject);
+                _traitParent.GetChild(i).GetComponent<TraitUpdater>().InitializeTrait(PersonData.traits[i]);
                 
                 _traitParent.GetChild(i).gameObject.SetActive(true);
             }
 
             else
             {
-                _traitParent.GetChild(i).gameObject.SetActive(false);
+                _traitParent.GetChild(i).gameObject.SetActive(false); // if there are too many trait objects
             }
         }
+    }
+
+    // Add content values to person trait bars
+    public void ConsumeContent(GameObject contentObject)
+    {
+        if (contentObject == null) return;
+
+        ContentScriptableObject contentData = contentObject.GetComponent<ContentCard>().ContentData;
+
+        foreach (Transform trait in _traitParent)
+        {
+            TraitScriptableObject traitData = trait.GetComponent<TraitUpdater>().TraitScriptableObject;
+            
+            float traitValueIncrease = 0f;
+
+            foreach (ContentScriptableObject.WeightedTrait weightedTrait in contentData.traits)
+            {
+                if (weightedTrait.traitScriptableObject.traitName == traitData.traitName)
+                {
+                    traitValueIncrease += weightedTrait.weight * GameManager.Instance.TraitIncreaseMultiplier;
+                }
+            }
+            
+            trait.GetComponent<TraitUpdater>().UpdateTraitValue(traitValueIncrease);
+        }
+        
+        GameManager.Instance.ReplaceContentCard();
     }
 }

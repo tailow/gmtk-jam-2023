@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -14,6 +12,13 @@ public class ContentCard : MonoBehaviour
 
     private void Start()
     {
+        UpdateContentCard(ContentData);
+    }
+
+    public void UpdateContentCard(ContentScriptableObject contentData)
+    {
+        ContentData = contentData;
+        
         _titleText.text = ContentData.title;
 
         if (ContentData.sprite != null)
@@ -26,7 +31,7 @@ public class ContentCard : MonoBehaviour
         // Add tags to description
         foreach (ContentScriptableObject.WeightedTrait trait in ContentData.traits)
         {
-            if (trait.weight > 0.5f)
+            if (trait.weight > 0f) // only display relevant enough tags
             {
                 descriptionText += " #" + trait.traitScriptableObject.traitName.ToLower();
             }

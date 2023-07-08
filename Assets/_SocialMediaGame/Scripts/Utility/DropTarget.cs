@@ -26,8 +26,12 @@ public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
     }
 
+    // gets executed when dropping held object onto this target
     public void OnDrop(PointerEventData eventData)
     {
-        DropEvent?.Invoke(GameManager.Instance.CurrentDraggingObject);
+        DropEvent?.Invoke(GameManager.Instance.CurrentDraggingObject); // pass dropped object as parameter
+        MouseExitEvent?.Invoke();
+        
+        GameManager.Instance.CurrentDraggingObject = null;
     }
 }

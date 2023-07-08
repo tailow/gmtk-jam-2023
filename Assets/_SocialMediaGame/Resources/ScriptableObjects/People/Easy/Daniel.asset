@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Daniel
   m_EditorClassIdentifier: 
   personName: Daniel
-  personSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  globalDrainRate: 1
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  globalDrainRate: 0.5
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
-    drainRate: 1
+    drainRate: 0.5
   - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
     drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
