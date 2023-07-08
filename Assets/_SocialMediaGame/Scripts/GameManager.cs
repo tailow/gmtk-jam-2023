@@ -22,6 +22,8 @@ public class GameManager : Singleton<GameManager>
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
+    private int _previousContentCardIndex = -1;
+
     private int LOWEST_DIFFICULTY = 0;
     private int HIGHEST_DIFFICULTY = 2;
     private float playerSpawnTimer = 0f;
@@ -141,9 +143,20 @@ public class GameManager : Singleton<GameManager>
             _contentCardParent
         );
 
+        int randomIndex;
+
+        while (true)
+        {
+            randomIndex = Random.Range(0, _contentScriptableObjects.Length - 1);
+
+            if (randomIndex != _previousContentCardIndex) break;
+        }
+
+        _previousContentCardIndex = randomIndex;
+
         // pick random content card from scriptable objects
         ContentScriptableObject randomContentData = (ContentScriptableObject)
-            _contentScriptableObjects[Random.Range(0, _contentScriptableObjects.Length - 1)];
+            _contentScriptableObjects[randomIndex];
 
         contentCardObject.GetComponent<ContentCard>().UpdateContentCard(randomContentData);
     }
