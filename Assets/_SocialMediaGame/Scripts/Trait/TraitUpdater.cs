@@ -13,20 +13,38 @@ public class TraitUpdater : MonoBehaviour
 
     private float _traitValue;
     private float _traitDrain;
+    private float _time;
 
     bool _isFlashingRed = false;
     Color traitColor;
-  
+
+    Vector3 pointA;
+    Vector3 pointB;
+    GameObject card;
+    
+    void Start () {
+        card = gameObject.transform.parent.transform.parent;
+        pointA = transform.eulerAngles + new Vector3 (0f, 0f, 30f);
+        pointB = transform.eulerAngles + new Vector3 (0f, 0, -30f);
+    }
+
     private void Update()
     {
         UpdateTraitValue(-_traitDrain * GameManager.Instance.TraitDrainMultiplier * 0.1f * Time.deltaTime); // trait drain
+        _time += Time.deltaTime;
+
         if (_isFlashingRed)
         {
             _traitFillImage.color = Color.Lerp(Color.red,traitColor, Mathf.PingPong(Time.time, 1));
+            // get parent of gameObject
+            float time = Mathf.PingPong (Time.time * 5f, 1);
+            card.eulerAngles = Vector3.Lerp (pointA, pointB, time);
         }
         else
         {
+
             _traitFillImage.color = traitColor;
+            card.rotation = Quaternion.identity;
         }
     }
 
@@ -84,6 +102,7 @@ public class TraitUpdater : MonoBehaviour
     {
         _isFlashingRed = true;
         Invoke("StopFlashingRed", 1f);
+        // do a shake effect on the gameObject by rotating it back and forth
     }
     public void StopFlashingRed()
     {
