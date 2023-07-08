@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
-    private float gameTimer;
+    private float playerSpawnTimer = 0f;
     private int playerCount = 0;
 
     private Object[] _contentScriptableObjects;
@@ -36,9 +36,9 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void Update() {
-        gameTimer += Time.deltaTime;
-        if(gameTimer > 30 && playerCount< 3){
-            gameTimer = 0;
+        playerSpawnTimer += Time.deltaTime;
+        if(playerSpawnTimer > 30 && playerCount < 3){
+            playerSpawnTimer = 0;
             InstantiatePlayerCard(0);
         }
     }
