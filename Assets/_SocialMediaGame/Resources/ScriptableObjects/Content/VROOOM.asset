@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: VROOOM
   m_EditorClassIdentifier: 
-  title: Olkiluoto Drift
+  title: VROOOM!!! VROOOOOM
   description: '#cars '
   sprite: {fileID: 21300000, guid: e577e5da05b45ea409b6afd02eaebe85, type: 3}
   traits:

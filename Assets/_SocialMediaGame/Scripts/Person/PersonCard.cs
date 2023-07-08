@@ -43,11 +43,12 @@ public class PersonCard : MonoBehaviour
     }
 
     // Add content values to person trait bars
-    public void ConsumeContent(GameObject contentObject)
+    public async void ConsumeContent(GameObject contentObject)
     {
         if (contentObject == null) return;
 
         ContentScriptableObject contentData = contentObject.GetComponent<ContentCard>().ContentData;
+        int allignedTraits = 0;
 
         foreach (Transform trait in _traitParent)
         {
@@ -60,12 +61,23 @@ public class PersonCard : MonoBehaviour
                 if (weightedTrait.traitScriptableObject.traitName == traitData.traitName)
                 {
                     traitValueIncrease += weightedTrait.weight * GameManager.Instance.TraitIncreaseMultiplier;
+                    allignedTraits++;
                 }
             }
-            
             trait.GetComponent<TraitUpdater>().UpdateTraitValue(traitValueIncrease);
         }
-        
+
+        // if no traits are alligned decrease all trait values by 1
+        if (allignedTraits == 0)
+        {
+            float weightedTraitValueDecrease = -1f * GameManager.Instance.TraitIncreaseMultiplier;
+            foreach (Transform trait in _traitParent)
+            {
+                Debug.Log("Decreasing trait value");
+                trait.GetComponent<TraitUpdater>().UpdateTraitValue(weightedTraitValueDecrease);
+            }
+        }
+
         GameManager.Instance.ReplaceContentCard();
     }
 }

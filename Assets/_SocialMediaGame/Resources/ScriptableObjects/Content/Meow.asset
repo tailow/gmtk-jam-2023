@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: Meow
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: Meowwwww!
+  description: mouw!
+  sprite: {fileID: 21300000, guid: a60bdc3692fb92543b3336b9f4ab1b09, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    weight: 1
