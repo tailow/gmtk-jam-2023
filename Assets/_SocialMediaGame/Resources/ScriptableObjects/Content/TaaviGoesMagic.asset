@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: TaaviGoesMagic
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Bark! Bark!
+  description: '#bones'
   sprite: {fileID: 0}
-  traits: []
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 68d140fa3bcd8d7479a355d09a2cf2b7, type: 2}
+    weight: 0.75
