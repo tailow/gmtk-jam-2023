@@ -51,6 +51,7 @@ public class GameManager : Singleton<GameManager>
         );
 
         InstantiatePlayerCard(0);
+        InstantiateContentCard();
     }
 
     private void Update()
