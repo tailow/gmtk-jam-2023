@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
+public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
     public UnityEvent<GameObject> DropEvent;
     public UnityEvent MouseEnterEvent;
@@ -26,11 +26,8 @@ public class DropTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
-        if (GameManager.Instance.CurrentDraggingObject != null)
-        {
-            DropEvent?.Invoke(GameManager.Instance.CurrentDraggingObject);
-        }
+        DropEvent?.Invoke(GameManager.Instance.CurrentDraggingObject);
     }
 }
