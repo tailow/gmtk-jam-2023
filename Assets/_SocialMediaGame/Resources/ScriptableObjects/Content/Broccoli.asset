@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Decapitation
+  m_Name: Broccoli
   m_EditorClassIdentifier: 
-  title: Peppa Pig gets decapitated
+  title: Broccoli Assaults Carrot
   description: subscribe to my onlyfans
-  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: aed005d8e93c946428b69cbe2d499e24, type: 3}
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
     weight: 1
