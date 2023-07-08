@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
@@ -87,6 +88,7 @@ public class GameManager : Singleton<GameManager>
     public void GameOver()
     {
         Debug.Log("Game over!");
+        SceneManager.LoadScene("DeathScene");
     }
 
     public void ReplaceContentCard()
