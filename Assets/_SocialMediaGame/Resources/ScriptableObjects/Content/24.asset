@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: My local yakuza
   description: He cannot be this cool! #stronk
-  sprite: {fileID: 21300000, guid: 2ab16e5373d7e1e4b9adbb7d7718a8d8, type: 3}
+  sprite: {fileID: 21300000, guid: 581682e466da92f44ab3b8fc128f77cc, type: 3}
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
     weight: 1
