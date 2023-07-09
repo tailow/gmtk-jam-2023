@@ -16,7 +16,7 @@ MonoBehaviour:
   description: '#bones'
   sprite: {fileID: 21300000, guid: 709632fe9128e1d41af311c3c0407fb0, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
     weight: 1
   - traitScriptableObject: {fileID: 11400000, guid: 68d140fa3bcd8d7479a355d09a2cf2b7, type: 2}
     weight: 0.75

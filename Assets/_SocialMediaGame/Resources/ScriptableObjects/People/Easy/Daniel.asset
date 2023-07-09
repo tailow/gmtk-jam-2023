@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
   globalDrainRate: 0.5
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
     drainRate: 0.5
   - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
     drainRate: 1
