@@ -25,7 +25,7 @@ public class PersonCard : MonoBehaviour
     {
         float lowestTrait = GetLowestTraitValue();
         
-        ShakeAmount = Mathf.Clamp((1 - lowestTrait - 0.75f) * 10f, 0, 10);
+        ShakeAmount = Mathf.Clamp((1 - lowestTrait - 0.8f) * 10f, 0, 10);
             
         Shake();
     }
@@ -84,7 +84,7 @@ public class PersonCard : MonoBehaviour
     }
 
     // Add content values to person trait bars
-    public async void ConsumeContent(GameObject contentObject)
+    public void ConsumeContent(GameObject contentObject)
     {
         if (contentObject == null) return;
 
@@ -114,7 +114,6 @@ public class PersonCard : MonoBehaviour
             float weightedTraitValueDecrease = -1f * GameManager.Instance.TraitIncreaseMultiplier;
             foreach (Transform trait in _traitParent)
             {
-                Debug.Log("Decreasing trait value");
                 trait.GetComponent<TraitUpdater>().UpdateTraitValue(weightedTraitValueDecrease);
             }
             GameManager.Instance.PlaySound(wrongSound);
