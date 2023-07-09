@@ -387,13 +387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec693072ccbd4e0449efd674eab83497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentDraggingObject: {fileID: 0}
   _contentCardPrefab: {fileID: 3052090855333524325, guid: a7675cc4cc5afea458c23bfaea5b0c50, type: 3}
   _contentCardParent: {fileID: 1233067210}
-  _playerCardPrefab: {fileID: 3052090855333524325, guid: 3476bbfc63137fd48b1b57ad448a9943, type: 3}
+  _playerCardPrefab: {fileID: 4833709640904457267, guid: d3eb97e7c2eb53147afc6b34b7a5db7e, type: 3}
   _playerCardGrid: {fileID: 2022139773}
   TraitDrainMultiplier: 0.1
   TraitIncreaseMultiplier: 0.1
+  LowestTraitValue: 0
 --- !u!1 &1178439979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 300}
-  m_Spacing: {x: 140, y: 50}
+  m_CellSize: {x: 300, y: 400}
+  m_Spacing: {x: 100, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1

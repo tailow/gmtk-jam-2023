@@ -2,11 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+
 public class GameManager : Singleton<GameManager>
 {
-    //[HideInInspector]
-    //public GameObject CurrentDraggingObject;
-
     [SerializeField]
     private GameObject _contentCardPrefab;
 
@@ -16,11 +15,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject _playerCardPrefab;
 
-    [SerializeField]
-    private Transform _playerCardGrid;
+    [FormerlySerializedAs("_playerCardGrid")] [SerializeField]
+    private Transform _personCardGrid;
 
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
+
+    private float _lowestTraitValue = 1f;
 
     private int _previousContentCardIndex = -1;
 
@@ -87,6 +88,18 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    private float GetLowestTraitValue()
+    {
+        float lowestValue = 1f;
+        
+        foreach (Transform personCardParent in _personCardGrid)
+        {
+            lowestValue = Mathf.Min(personCardParent.GetComponentInChildren<PersonCard>().GetLowestTraitValue(), lowestValue);
+        }
+
+        return lowestValue;
+    }
+
     public void GameOver()
     {
         Debug.Log("Game over!");
@@ -102,7 +115,7 @@ public class GameManager : Singleton<GameManager>
 
     private void InstantiatePlayerCard(int difficulty)
     {
-        GameObject playerCardObject = Instantiate(_playerCardPrefab, _playerCardGrid);
+        GameObject playerCardObject = Instantiate(_playerCardPrefab, _personCardGrid);
         playerList.Add(playerCardObject);
         playerCount++;
 
@@ -131,7 +144,7 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
 
-        playerCardObject.GetComponent<PersonCard>().UpdatePersonCard(randomPersonData);
+        playerCardObject.GetComponentInChildren<PersonCard>().UpdatePersonCard(randomPersonData);
     }
 
     private void InstantiateContentCard()
