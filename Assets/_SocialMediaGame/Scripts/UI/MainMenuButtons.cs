@@ -14,6 +14,10 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
     public void ShowTutorial()
     {
         _tutorialPanel.SetActive(true);
