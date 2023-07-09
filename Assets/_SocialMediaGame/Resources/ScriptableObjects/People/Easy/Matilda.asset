@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personName: Matilda
   sprite: {fileID: 21300000, guid: ad32c830563b4a942a6b2fdb959315f7, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
   globalDrainRate: 0.75
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}

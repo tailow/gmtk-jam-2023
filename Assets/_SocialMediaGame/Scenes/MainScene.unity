@@ -392,7 +392,7 @@ MonoBehaviour:
   _playerCardPrefab: {fileID: 4833709640904457267, guid: d3eb97e7c2eb53147afc6b34b7a5db7e, type: 3}
   _personCardGrid: {fileID: 2022139773}
   TraitDrainMultiplier: 0.1
-  TraitIncreaseMultiplier: 0.1
+  TraitIncreaseMultiplier: 0.2
 --- !u!1 &1115674609
 GameObject:
   m_ObjectHideFlags: 0

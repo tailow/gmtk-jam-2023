@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12cf9d95658a34848a77b9ff5c3ed5dd, type: 3}
-  m_Name: Mr Pink
+  m_Name: "Piim\xE4"
   m_EditorClassIdentifier: 
-  personName: Mr Pink
-  sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  personName: "Piim\xE4"
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   icon: {fileID: 21300000, guid: c793cddd9ad275e4eb4a9da21f45a0ed, type: 3}
-  globalDrainRate: 1.5
+  globalDrainRate: 1.4
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 48f59e397f320754f8075c6d26a5351b, type: 2}
+    drainRate: 1
+  - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
     drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
-    drainRate: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 166638218aae1104caa031a0ce8adf70, type: 2}
     drainRate: 1

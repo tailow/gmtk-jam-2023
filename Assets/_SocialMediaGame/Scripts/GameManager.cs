@@ -26,6 +26,7 @@ public class GameManager : Singleton<GameManager>
     private int _previousContentCardIndex = -1;
 
     private int LOWEST_DIFFICULTY = 0;
+    private int CURRENT_HIGHTEST_DIFFICULTY = 0;
     private int HIGHEST_DIFFICULTY = 2;
     private float playerSpawnTimer = 0f;
     private int playerCount = 0;
@@ -67,7 +68,7 @@ public class GameManager : Singleton<GameManager>
         if (playerSpawnTimer > 30 && playerCount < 3)
         {
             playerSpawnTimer = 0;
-            InstantiatePlayerCard(Random.Range(0, 2));
+            InstantiatePlayerCard(Random.Range(LOWEST_DIFFICULTY, CURRENT_HIGHTEST_DIFFICULTY));
         }
         if (playerSpawnTimer > 60)
         {
@@ -79,9 +80,9 @@ public class GameManager : Singleton<GameManager>
 
             // increase difficulty
             // maybe add global drain also here
-            if (LOWEST_DIFFICULTY < HIGHEST_DIFFICULTY)
+            if (CURRENT_HIGHTEST_DIFFICULTY < HIGHEST_DIFFICULTY)
             {
-                LOWEST_DIFFICULTY += 1;
+                CURRENT_HIGHTEST_DIFFICULTY += 1;
             }
 
             playerCount--;

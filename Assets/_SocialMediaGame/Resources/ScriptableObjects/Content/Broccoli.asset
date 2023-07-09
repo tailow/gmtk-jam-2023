@@ -20,9 +20,3 @@ MonoBehaviour:
     weight: 1
   - traitScriptableObject: {fileID: 11400000, guid: 86d9aeddce041a944b146d89b3f75108, type: 2}
     weight: 0.5
-  - traitScriptableObject: {fileID: 11400000, guid: 48f59e397f320754f8075c6d26a5351b, type: 2}
-    weight: 0.2
-  - traitScriptableObject: {fileID: 11400000, guid: f8e6ca75adb266449adf996bd1fe2a55, type: 2}
-    weight: 0.2
-  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
-    weight: 0.1

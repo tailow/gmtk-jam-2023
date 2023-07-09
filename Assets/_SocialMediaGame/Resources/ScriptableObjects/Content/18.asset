@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: 18
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: 'Radio man '
+  description: '#plumbing'
+  sprite: {fileID: 21300000, guid: aa27fcfb36668704d8060e498ef94018, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    weight: 1
