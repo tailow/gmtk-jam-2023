@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Yakuza
+  m_Name: 8
   m_EditorClassIdentifier: 
-  title: My local yakuza
-  description: He cannot be this cool! #stronk
-  sprite: {fileID: 21300000, guid: 2ab16e5373d7e1e4b9adbb7d7718a8d8, type: 3}
+  title: Grassland situtation
+  description: '#messiandronaldorule34'
+  sprite: {fileID: 21300000, guid: 0e4d31eb2bfdd4847bfa860adde98beb, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
-    weight: 1
-  - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
-    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
+    weight: 1.5

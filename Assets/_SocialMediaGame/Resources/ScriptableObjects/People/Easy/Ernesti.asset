@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ernesti
   m_EditorClassIdentifier: 
   personName: Ernesti
-  sprite: {fileID: 21300000, guid: 1deb038a99c1280488ab4444438d23c9, type: 3}
+  sprite: {fileID: 21300000, guid: 65003e9613a3f584b8df6b32d7e85619, type: 3}
   icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
   globalDrainRate: 0.75
   traits:

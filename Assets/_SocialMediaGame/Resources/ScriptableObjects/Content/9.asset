@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Ring overpowers prodo
+  m_Name: 9
   m_EditorClassIdentifier: 
-  title: Ring vs Prodo
-  description: 
-  sprite: {fileID: 21300000, guid: 1deb038a99c1280488ab4444438d23c9, type: 3}
+  title: Sergant Tato
+  description: reporting for duty
+  sprite: {fileID: 21300000, guid: 9332139d13d3f8b4d9e5320aef426a44, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 68d140fa3bcd8d7479a355d09a2cf2b7, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 86d9aeddce041a944b146d89b3f75108, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
     weight: 1

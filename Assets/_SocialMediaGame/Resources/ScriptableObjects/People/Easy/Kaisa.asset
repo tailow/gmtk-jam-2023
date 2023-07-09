@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kaisa
   m_EditorClassIdentifier: 
   personName: Kaisa
-  sprite: {fileID: 21300000, guid: e577e5da05b45ea409b6afd02eaebe85, type: 3}
+  sprite: {fileID: 21300000, guid: a13b01162f1c428449f3dbee86c244b3, type: 3}
   icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
   globalDrainRate: 0.5
   traits:

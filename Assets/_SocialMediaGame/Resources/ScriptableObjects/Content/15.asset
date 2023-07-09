@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: WrapperMan
+  m_Name: 15
   m_EditorClassIdentifier: 
-  title: Wrapperman
-  description: '#spain'
-  sprite: {fileID: 21300000, guid: 15b6fe94235f0f345a23226f2afc00ae, type: 3}
+  title: MukBang
+  description: '#yummy'
+  sprite: {fileID: 21300000, guid: eb6a3f150521e734bbf20080c133686b, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
     weight: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
-    weight: 0.25

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personName: "Piim\xE4"
   sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  icon: {fileID: 21300000, guid: c793cddd9ad275e4eb4a9da21f45a0ed, type: 3}
+  icon: {fileID: 21300000, guid: f4f8423111fc4c3439ce893ae7c260d0, type: 3}
   globalDrainRate: 1.4
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 48f59e397f320754f8075c6d26a5351b, type: 2}

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Football Situation
+  m_Name: 23
   m_EditorClassIdentifier: 
-  title: Grassland situtation
-  description: '#messiandronaldorule34'
-  sprite: {fileID: 21300000, guid: 0e4d31eb2bfdd4847bfa860adde98beb, type: 3}
+  title: It's my rat's birthday! :3
+  description: He is enjoying that cake
+  sprite: {fileID: 21300000, guid: fa34a67ccca90494c879c374156f0183, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
-    weight: 1.5
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
+    weight: 1
