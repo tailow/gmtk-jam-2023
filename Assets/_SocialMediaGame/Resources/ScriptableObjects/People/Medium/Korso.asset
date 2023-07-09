@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personName: Korso
   sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  icon: {fileID: 21300000, guid: c793cddd9ad275e4eb4a9da21f45a0ed, type: 3}
+  icon: {fileID: 21300000, guid: 6fccfdde4915085499774b17417d7932, type: 3}
   globalDrainRate: 1.25
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 68d140fa3bcd8d7479a355d09a2cf2b7, type: 2}
     drainRate: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
     drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
     drainRate: 1
