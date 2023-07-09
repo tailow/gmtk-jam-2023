@@ -15,7 +15,7 @@ MonoBehaviour:
   personName: Jaakko
   sprite: {fileID: 21300000, guid: cdceb02bbcb7b214fa69e809523527fe, type: 3}
   icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
-  globalDrainRate: 0.5
+  globalDrainRate: 0.75
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
     drainRate: 0.5
