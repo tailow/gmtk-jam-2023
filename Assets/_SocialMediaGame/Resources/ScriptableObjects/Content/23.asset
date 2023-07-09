@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: It's my rat's birthday! :3
   description: He is enjoying that cake
-  sprite: {fileID: 21300000, guid: fa34a67ccca90494c879c374156f0183, type: 3}
+  sprite: {fileID: 21300000, guid: 4eb95d0cee05dd74b934c6d3da6902e2, type: 3}
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
     weight: 1
