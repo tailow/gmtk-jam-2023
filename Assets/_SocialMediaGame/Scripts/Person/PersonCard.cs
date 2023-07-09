@@ -48,6 +48,7 @@ public class PersonCard : MonoBehaviour
     }
     
     public void UpdatePersonCard(PersonScriptableObject personData){
+        PersonData = personData;
         _nameText.text = personData.personName;
         
         // check if anything gets dropped on this, should probably check which object gets dropped
