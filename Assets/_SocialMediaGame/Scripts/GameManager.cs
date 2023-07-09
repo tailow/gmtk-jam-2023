@@ -28,8 +28,6 @@ public class GameManager : Singleton<GameManager>
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
-    private float _lowestTraitValue = 1f;
-
     private int _previousContentCardIndex = -1;
 
     private int CURRENT_DIFFICULTY = 0;
