@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Football Situation
+  m_Name: 2
   m_EditorClassIdentifier: 
-  title: Grassland situtation
-  description: '#messiandronaldorule34'
-  sprite: {fileID: 21300000, guid: 0e4d31eb2bfdd4847bfa860adde98beb, type: 3}
+  title: Einstein seeing a computer
+  description: this
+  sprite: {fileID: 21300000, guid: ad32c830563b4a942a6b2fdb959315f7, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
-    weight: 1.5
+  - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    weight: 0.4

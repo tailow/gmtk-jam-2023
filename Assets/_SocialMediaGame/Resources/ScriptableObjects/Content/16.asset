@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Can you even Nokia
+  m_Name: 16
   m_EditorClassIdentifier: 
-  title: Can you even nokia?
-  description: '#2000''s #5gKills'
-  sprite: {fileID: 21300000, guid: b72568858eaab0a458bfd1f0c8655f91, type: 3}
+  title: UnderMeower
+  description: '#protein'
+  sprite: {fileID: 21300000, guid: c9e4dfc060df9ae46ab0ae7bfa3229b9, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
     weight: 1
   - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
     weight: 1

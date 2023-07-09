@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: "Rovanper\xE4"
+  m_Name: 24
   m_EditorClassIdentifier: 
-  title: "Rovanper\xE4 #1"
-  description: '#grandprix'
-  sprite: {fileID: 21300000, guid: d2f13ba80fca4ce47827e3e72d5c4458, type: 3}
+  title: My local yakuza
+  description: He cannot be this cool! #stronk
+  sprite: {fileID: 21300000, guid: 2ab16e5373d7e1e4b9adbb7d7718a8d8, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 166638218aae1104caa031a0ce8adf70, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
     weight: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
-    weight: 0.5
+  - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
+    weight: 1

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Mukbang
+  m_Name: 3
   m_EditorClassIdentifier: 
-  title: MukBang
-  description: '#yummy'
-  sprite: {fileID: 21300000, guid: eb6a3f150521e734bbf20080c133686b, type: 3}
+  title: Cat decapition
+  description: '#NSFW'
+  sprite: {fileID: 21300000, guid: a4d8bad307101734185e1255d4893e58, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: cc93f0daa36ff0443890f14189832864, type: 2}
     weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    weight: -1

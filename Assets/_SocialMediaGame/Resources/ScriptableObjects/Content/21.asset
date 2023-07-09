@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: RatBirthday
+  m_Name: 21
   m_EditorClassIdentifier: 
-  title: It's my rat's birthday! :3
-  description: He is enjoying that cake
-  sprite: {fileID: 21300000, guid: fa34a67ccca90494c879c374156f0183, type: 3}
+  title: Microwaved some bananas!
+  description: They turned into gel #gelbana
+  sprite: {fileID: 21300000, guid: f40e917f980dc0c43b0692ab63a1a732, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
-    weight: 1
   - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
     weight: 1

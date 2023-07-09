@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
-  m_Name: Meow
+  m_Name: 7
   m_EditorClassIdentifier: 
   title: Meowwwww!
   description: mouw!
