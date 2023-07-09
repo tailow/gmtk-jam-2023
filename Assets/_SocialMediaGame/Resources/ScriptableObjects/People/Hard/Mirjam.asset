@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mirjam
   m_EditorClassIdentifier: 
   personName: Mr Cyan
-  sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 7c8361e8687b4c142a56eea1227c49bd, type: 3}
   icon: {fileID: 21300000, guid: d9e43908841bc19439ada8fcd4568d17, type: 3}
   globalDrainRate: 2
   traits:
