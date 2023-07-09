@@ -16,7 +16,7 @@ MonoBehaviour:
   description: '#grandprix'
   sprite: {fileID: 21300000, guid: d2f13ba80fca4ce47827e3e72d5c4458, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 166638218aae1104caa031a0ce8adf70, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: d74a0320b03fc4c42abd703853609cb3, type: 2}
     weight: 1
   - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
     weight: 1

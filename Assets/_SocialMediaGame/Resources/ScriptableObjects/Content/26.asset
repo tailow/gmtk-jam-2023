@@ -16,5 +16,5 @@ MonoBehaviour:
   description: cute puppy
   sprite: {fileID: 21300000, guid: 40d4fdb0f19ff4d46b661ee2cd591b63, type: 3}
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 3427d74f98ac4c54cbb27af21d271070, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
     weight: 1

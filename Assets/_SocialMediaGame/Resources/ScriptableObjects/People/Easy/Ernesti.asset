@@ -19,7 +19,7 @@ MonoBehaviour:
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
     drainRate: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 166638218aae1104caa031a0ce8adf70, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: d74a0320b03fc4c42abd703853609cb3, type: 2}
     drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
     drainRate: 0.5

@@ -323,12 +323,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -564,7 +564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 69.306435, y: -29.120358}
+  m_AnchoredPosition: {x: 69.30646, y: -29.120361}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395586534
@@ -1325,7 +1325,7 @@ RectTransform:
   m_GameObject: {fileID: 729795264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 260169729}
@@ -1364,17 +1364,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6bb4fc145ff7c5d40ab80f29e70ed80c, type: 3}
   _image: {fileID: 70149903}
   _tutorialTexts:
-  - Aim of the game is to give users the content that they like for example kaisa
-    likes fantasy
+  - The aim of the game is to give users the content that they like, for example
+    Kaisa likes fantasy.
   - You can drag content around by using left mouse button and then releasing it
-    when its where you want it to go.
+    when it's where you want it to go.
   - It wont always be that easy though. You can delete content cards that your users
-    don't like at the moment
-  - More users will be attracted to your app overtime
+    don't like at the moment.
+  - More users will be attracted to your app over time.
   - When one of the traits is getting low you should try to focus on finding content
     to help him or you will lose the game.
-  - Players might have icons. Snail means they consume content quite slow but lighting
-    mens they are fast consumers
+  - Players might have icons. Snail means they consume content quite slowly and lighting
+    means they are fast consumers.
   _tutorialText: {fileID: 490671979}
 --- !u!1 &822550431
 GameObject:
@@ -2970,8 +2970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -317.5}
-  m_SizeDelta: {x: 2000, y: 2000}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 3000, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1898703651
 MonoBehaviour:
