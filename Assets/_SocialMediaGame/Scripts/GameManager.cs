@@ -4,6 +4,8 @@ using FMODUnity;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using System.Linq;
+using TMPro;
+using System;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -20,6 +22,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Transform _personCardGrid;
 
+    [SerializeField] private TMPro.TMP_Text _timerText;
+    private float _gameTimer;
+
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
@@ -31,7 +36,7 @@ public class GameManager : Singleton<GameManager>
     private int HIGHEST_DIFFICULTY = 2;
     private float playerSpawnTimer = 0f;
 
-    private Object[] _contentScriptableObjects;
+    private UnityEngine.Object[] _contentScriptableObjects;
 
     private PersonScriptableObject[] _easyPersonScriptableObjects;
     private PersonScriptableObject[] _mediumPersonScriptableObjects;
@@ -41,7 +46,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        Random.InitState(System.DateTime.Now.Millisecond);
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
         // apparently not recommended, but it works, loads all scriptable objects into array
         _contentScriptableObjects = Resources.LoadAll(
             "ScriptableObjects/Content",
@@ -71,7 +76,9 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
         playerSpawnTimer += Time.deltaTime;
-
+        _gameTimer += Time.deltaTime;
+        TimeSpan timeSpan = TimeSpan.FromSeconds(_gameTimer);
+        _timerText.text = "Time: " + timeSpan.ToString("mm':'ss");
         // spawn a new player every 30 seconds
         // if player list full despawn one player
         int playerCount = GetPlayerCount();
@@ -85,7 +92,7 @@ public class GameManager : Singleton<GameManager>
         {
             // remove random player and then spawn a new one
             playerSpawnTimer = 10;
-            int randomPlayer = Random.Range(0, playerCount);
+            int randomPlayer = UnityEngine.Random.Range(0, playerCount);
 
             // Destroy random child of playergrid
             Destroy(_personCardGrid.GetChild(randomPlayer).gameObject);
@@ -153,7 +160,7 @@ public class GameManager : Singleton<GameManager>
 
         while (true)
         {
-            randomIndex = Random.Range(0, _contentScriptableObjects.Length - 1);
+            randomIndex = UnityEngine.Random.Range(0, _contentScriptableObjects.Length - 1);
 
             if (randomIndex != _previousContentCardIndex)
                 break;
@@ -220,22 +227,22 @@ public class GameManager : Singleton<GameManager>
             {
                 case 0:
                     randomPersonData = _easyPersonScriptableObjects[
-                        Random.Range(0, _easyPersonScriptableObjects.Length)
+                        UnityEngine.Random.Range(0, _easyPersonScriptableObjects.Length)
                     ];
                     break;
                 case 1:
                     randomPersonData = _mediumPersonScriptableObjects[
-                        Random.Range(0, _mediumPersonScriptableObjects.Length)
+                        UnityEngine.Random.Range(0, _mediumPersonScriptableObjects.Length)
                     ];
                     break;
                 case 2:
                     randomPersonData = _hardPersonScriptableObjects[
-                        Random.Range(0, _hardPersonScriptableObjects.Length)
+                        UnityEngine.Random.Range(0, _hardPersonScriptableObjects.Length)
                     ];
                     break;
                 default:
                     randomPersonData = _easyPersonScriptableObjects[
-                        Random.Range(0, _easyPersonScriptableObjects.Length)
+                        UnityEngine.Random.Range(0, _easyPersonScriptableObjects.Length)
                     ];
                     break;
             }
