@@ -111,7 +111,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private float GetLowestTraitValue()
+    public float GetLowestTraitValue()
     {
         float lowestValue = 1f;
 
