@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b613096e24d254eafaae3a39ce7591, type: 3}
   m_Name: Animals
   m_EditorClassIdentifier: 
-  traitName: Cats
+  traitName: Animals
   color: {r: 0.7743048, g: 0.40743, b: 0.81, a: 0}

@@ -18,7 +18,7 @@ MonoBehaviour:
   globalDrainRate: 1
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 68d140fa3bcd8d7479a355d09a2cf2b7, type: 2}
-    drainRate: 1
+    drainRate: 1.25
   - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
     drainRate: 0.5
   - traitScriptableObject: {fileID: 11400000, guid: 48f59e397f320754f8075c6d26a5351b, type: 2}
