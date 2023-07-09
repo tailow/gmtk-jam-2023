@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Miki
   m_EditorClassIdentifier: 
   personName: Miki
-  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  icon: {fileID: 21300000, guid: d74ef922cdb688c4e956fe13113f71ff, type: 3}
+  sprite: {fileID: 21300000, guid: d74ef922cdb688c4e956fe13113f71ff, type: 3}
+  icon: {fileID: 21300000, guid: 7c1069afd8cc23f42a9ee039c63a6d48, type: 3}
   globalDrainRate: 1.5
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 166638218aae1104caa031a0ce8adf70, type: 2}

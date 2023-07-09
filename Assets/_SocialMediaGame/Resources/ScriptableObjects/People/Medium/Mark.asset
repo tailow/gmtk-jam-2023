@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mark
   m_EditorClassIdentifier: 
   personName: Mark Z
-  sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  icon: {fileID: 21300000, guid: 65ba781deaaaa6d45b3899264e0fa6a6, type: 3}
+  sprite: {fileID: 21300000, guid: 65ba781deaaaa6d45b3899264e0fa6a6, type: 3}
+  icon: {fileID: 21300000, guid: 7c1069afd8cc23f42a9ee039c63a6d48, type: 3}
   globalDrainRate: 1.5
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}

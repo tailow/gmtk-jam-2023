@@ -83,12 +83,12 @@ public class GameManager : Singleton<GameManager>
         // if player list full despawn one player
         int playerCount = GetPlayerCount();
 
-        if (playerSpawnTimer > 30 && playerCount < 3)
+        if (playerSpawnTimer > 5 && playerCount < 3)
         {
             playerSpawnTimer = 0;
             InstantiatePlayerCard(CURRENT_DIFFICULTY);
         }
-        else if (playerSpawnTimer > 35)
+        else if (playerSpawnTimer > 11)
         {
             // remove random player and then spawn a new one
             playerSpawnTimer = 10;
