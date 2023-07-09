@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12cf9d95658a34848a77b9ff5c3ed5dd, type: 3}
-  m_Name: Joonas
+  m_Name: Markku
   m_EditorClassIdentifier: 
-  personName: Joonas
-  sprite: {fileID: 21300000, guid: 9332139d13d3f8b4d9e5320aef426a44, type: 3}
-  icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
-  globalDrainRate: 0.3
+  personName: Markku
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: c793cddd9ad275e4eb4a9da21f45a0ed, type: 3}
+  globalDrainRate: 1
   traits:
   - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
     drainRate: 1
-  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
-    drainRate: 1
   - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    drainRate: 1.5
+  - traitScriptableObject: {fileID: 11400000, guid: 86d9aeddce041a944b146d89b3f75108, type: 2}
     drainRate: 1

@@ -14,9 +14,41 @@ public class PersonCard : MonoBehaviour
     [SerializeField] private Image _iconImage;
     [SerializeField] private Transform _traitParent;
 
+    public float ShakeAmount;
+
+    [SerializeField] private float _shakeSpeed = 100f;
+
     private string wrongSound = "incorrect";
     private string correctSound = "correct";
+
+    private void Update()
+    {
+        float lowestTrait = GetLowestTraitValue();
+        
+        ShakeAmount = Mathf.Clamp((1 - lowestTrait - 0.75f) * 10f, 0, 10);
+            
+        Shake();
+    }
+
+    private void Shake()
+    {
+        transform.localPosition = new Vector3(Mathf.Sin(Time.time * _shakeSpeed) * ShakeAmount, Mathf.Cos(Time.time * _shakeSpeed / 2) * ShakeAmount, 0);
+    }
+
+    public float GetLowestTraitValue()
+    {
+        float lowestValue = 1f;
+        
+        for (int i = 0; i < _traitParent.childCount; i++)
+        {
+            lowestValue = Mathf.Min(_traitParent.GetChild(i).GetComponent<TraitUpdater>().GetTraitValue(), lowestValue);
+        }
+
+        return lowestValue;
+    }
+    
     public void UpdatePersonCard(PersonScriptableObject personData){
+        PersonData = personData;
         _nameText.text = personData.personName;
         
         // check if anything gets dropped on this, should probably check which object gets dropped

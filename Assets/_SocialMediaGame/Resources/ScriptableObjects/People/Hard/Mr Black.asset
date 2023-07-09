@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12cf9d95658a34848a77b9ff5c3ed5dd, type: 3}
-  m_Name: Matilda
+  m_Name: Mr Black
   m_EditorClassIdentifier: 
-  personName: Matilda
+  personName: Mr Black
   sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  icon: {fileID: 0}
-  globalDrainRate: 0.75
+  icon: {fileID: 21300000, guid: d9e43908841bc19439ada8fcd4568d17, type: 3}
+  globalDrainRate: 2
   traits:
-  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
-    drainRate: 0.5
-  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
     drainRate: 1
-  - traitScriptableObject: {fileID: 11400000, guid: b726fe026758e8044b57c6ad3691acdc, type: 2}
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    drainRate: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
     drainRate: 1

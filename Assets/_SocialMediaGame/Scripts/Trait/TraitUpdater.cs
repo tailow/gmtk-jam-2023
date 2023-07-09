@@ -24,12 +24,16 @@ public class TraitUpdater : MonoBehaviour
 
     Vector3 pointA;
     Vector3 pointB;
-    Transform card;
+    Transform personCardTransform;
 
+    private PersonCard _personCard;
+ 
     void Start () {
-        card = gameObject.transform.parent.transform.parent;
-        pointA = transform.eulerAngles + new Vector3 (0f, 0f, 30f);
-        pointB = transform.eulerAngles + new Vector3 (0f, 0, -30f);
+        personCardTransform = transform.parent.parent;
+        pointA = transform.eulerAngles + new Vector3 (0f, 0f, 10f);
+        pointB = transform.eulerAngles + new Vector3 (0f, 0, -10f);
+
+        _personCard = personCardTransform.GetComponent<PersonCard>();
     }
 
     private void Update()
@@ -45,13 +49,12 @@ public class TraitUpdater : MonoBehaviour
             _traitFillImage.color = Color.Lerp(Color.red,traitColor, Mathf.PingPong(Time.time, 1));
             // get parent of gameObject
             float time = Mathf.PingPong (Time.time * 5f, 1);
-            card.eulerAngles = Vector3.Lerp (pointA, pointB, time);
+            personCardTransform.eulerAngles = Vector3.Lerp (pointA, pointB, time);
         }
         else
         {
-
             _traitFillImage.color = traitColor;
-            card.rotation = Quaternion.identity;
+            personCardTransform.rotation = Quaternion.identity;
         }
     }
 
@@ -105,6 +108,11 @@ public class TraitUpdater : MonoBehaviour
         
         _traitHighlightSlider.value = _traitValue;
         _traitSlider.value = _traitValue;
+    }
+    
+    public float GetTraitValue()
+    {
+        return _traitValue;
     }
 
     // change the color of the trait bar to red. SHould be a timed event lasting 0.5 seconds

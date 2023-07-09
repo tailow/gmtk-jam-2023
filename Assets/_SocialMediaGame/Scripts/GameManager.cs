@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using System.Linq;
+
 public class GameManager : Singleton<GameManager>
 {
-    [HideInInspector]
-    public GameObject CurrentDraggingObject;
-
     [SerializeField]
     private GameObject _contentCardPrefab;
 
@@ -16,24 +16,28 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject _playerCardPrefab;
 
+    [FormerlySerializedAs("_playerCardGrid")]
     [SerializeField]
-    private Transform _playerCardGrid;
+    private Transform _personCardGrid;
 
     public float TraitDrainMultiplier;
     public float TraitIncreaseMultiplier;
 
+    private float _lowestTraitValue = 1f;
+
     private int _previousContentCardIndex = -1;
 
-    private int LOWEST_DIFFICULTY = 0;
+    private int CURRENT_DIFFICULTY = 0;
     private int HIGHEST_DIFFICULTY = 2;
     private float playerSpawnTimer = 0f;
-    private int playerCount = 0;
-    List<GameObject> playerList = new List<GameObject>();
 
     private Object[] _contentScriptableObjects;
+
     private PersonScriptableObject[] _easyPersonScriptableObjects;
     private PersonScriptableObject[] _mediumPersonScriptableObjects;
     private PersonScriptableObject[] _hardPersonScriptableObjects;
+
+    private PersonScriptableObject[][] allPersons;
 
     private void Start()
     {
@@ -53,6 +57,13 @@ public class GameManager : Singleton<GameManager>
             "ScriptableObjects/People/Hard"
         );
 
+        allPersons = new PersonScriptableObject[][]
+        {
+            _easyPersonScriptableObjects,
+            _mediumPersonScriptableObjects,
+            _hardPersonScriptableObjects
+        };
+
         InstantiatePlayerCard(0);
         InstantiateContentCard();
     }
@@ -63,28 +74,49 @@ public class GameManager : Singleton<GameManager>
 
         // spawn a new player every 30 seconds
         // if player list full despawn one player
+        int playerCount = GetPlayerCount();
+
         if (playerSpawnTimer > 30 && playerCount < 3)
         {
             playerSpawnTimer = 0;
-            InstantiatePlayerCard(Random.Range(0, 2));
+            InstantiatePlayerCard(CURRENT_DIFFICULTY);
         }
-        if (playerSpawnTimer > 60)
+        else if (playerSpawnTimer > 35)
         {
             // remove random player and then spawn a new one
-            playerSpawnTimer = 0;
+            playerSpawnTimer = 10;
             int randomPlayer = Random.Range(0, playerCount);
-            // remove from list
-            Destroy(playerList[randomPlayer]);
+
+            // Destroy random child of playergrid
+            Destroy(_personCardGrid.GetChild(randomPlayer).gameObject);
 
             // increase difficulty
             // maybe add global drain also here
-            if (LOWEST_DIFFICULTY < HIGHEST_DIFFICULTY)
+            if (CURRENT_DIFFICULTY < HIGHEST_DIFFICULTY)
             {
-                LOWEST_DIFFICULTY += 1;
+                IncreaseDifficulty();
             }
-
-            playerCount--;
+            else
+            {
+                Debug.Log("Already at highest difficulty");
+                TraitDrainMultiplier += 0.025f;
+            }
         }
+    }
+
+    private float GetLowestTraitValue()
+    {
+        float lowestValue = 1f;
+
+        foreach (Transform personCardParent in _personCardGrid)
+        {
+            lowestValue = Mathf.Min(
+                personCardParent.GetComponentInChildren<PersonCard>().GetLowestTraitValue(),
+                lowestValue
+            );
+        }
+
+        return lowestValue;
     }
 
     public void GameOver()
@@ -102,36 +134,10 @@ public class GameManager : Singleton<GameManager>
 
     private void InstantiatePlayerCard(int difficulty)
     {
-        GameObject playerCardObject = Instantiate(_playerCardPrefab, _playerCardGrid);
-        playerList.Add(playerCardObject);
-        playerCount++;
+        GameObject playerCardObject = Instantiate(_playerCardPrefab, _personCardGrid);
 
-        PersonScriptableObject randomPersonData;
-        switch (difficulty)
-        {
-            case 0:
-                randomPersonData = _easyPersonScriptableObjects[
-                    Random.Range(0, _easyPersonScriptableObjects.Length)
-                ];
-                break;
-            case 1:
-                randomPersonData = _mediumPersonScriptableObjects[
-                    Random.Range(0, _mediumPersonScriptableObjects.Length)
-                ];
-                break;
-            case 2:
-                randomPersonData = _hardPersonScriptableObjects[
-                    Random.Range(0, _hardPersonScriptableObjects.Length)
-                ];
-                break;
-            default:
-                randomPersonData = _easyPersonScriptableObjects[
-                    Random.Range(0, _easyPersonScriptableObjects.Length)
-                ];
-                break;
-        }
-
-        playerCardObject.GetComponent<PersonCard>().UpdatePersonCard(randomPersonData);
+        PersonScriptableObject personData = GetPersonDataThatDoesNotExistInGrid(difficulty);
+        playerCardObject.GetComponentInChildren<PersonCard>().UpdatePersonCard(personData);
     }
 
     private void InstantiateContentCard()
@@ -149,7 +155,8 @@ public class GameManager : Singleton<GameManager>
         {
             randomIndex = Random.Range(0, _contentScriptableObjects.Length - 1);
 
-            if (randomIndex != _previousContentCardIndex) break;
+            if (randomIndex != _previousContentCardIndex)
+                break;
         }
 
         _previousContentCardIndex = randomIndex;
@@ -173,5 +180,81 @@ public class GameManager : Singleton<GameManager>
     public void PlaySound(string eventName)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/" + eventName);
+    }
+
+    // Pasta Carbonara
+    public void IncreaseDifficulty()
+    {
+        bool playersAreOfCurrentDifficulty = true;
+        foreach (Transform child in _personCardGrid)
+        {
+            PersonCard personCard = child.GetComponentInChildren<PersonCard>();
+            PersonScriptableObject personData = personCard.PersonData;
+            if (!allPersons[CURRENT_DIFFICULTY].Contains(personData))
+            {
+                playersAreOfCurrentDifficulty = false;
+                break;
+            }
+        }
+        if (playersAreOfCurrentDifficulty)
+        {
+            if (CURRENT_DIFFICULTY < HIGHEST_DIFFICULTY)
+            {
+                CURRENT_DIFFICULTY++;
+            }
+            Debug.Log("Difficulty increased to " + CURRENT_DIFFICULTY);
+        }
+    }
+
+    public int GetPlayerCount()
+    {
+        return _personCardGrid.childCount;
+    }
+
+    public PersonScriptableObject GetPersonDataThatDoesNotExistInGrid(int difficulty)
+    {
+        PersonScriptableObject randomPersonData;
+        while (true)
+        {
+            switch (difficulty)
+            {
+                case 0:
+                    randomPersonData = _easyPersonScriptableObjects[
+                        Random.Range(0, _easyPersonScriptableObjects.Length)
+                    ];
+                    break;
+                case 1:
+                    randomPersonData = _mediumPersonScriptableObjects[
+                        Random.Range(0, _mediumPersonScriptableObjects.Length)
+                    ];
+                    break;
+                case 2:
+                    randomPersonData = _hardPersonScriptableObjects[
+                        Random.Range(0, _hardPersonScriptableObjects.Length)
+                    ];
+                    break;
+                default:
+                    randomPersonData = _easyPersonScriptableObjects[
+                        Random.Range(0, _easyPersonScriptableObjects.Length)
+                    ];
+                    break;
+            }
+            bool DuplicatePerson = false;
+            for (int i = 0; i < GetPlayerCount(); i++)
+            {
+                if (
+                    _personCardGrid.GetChild(i).GetComponentInChildren<PersonCard>().PersonData
+                    == randomPersonData
+                )
+                {
+                    DuplicatePerson = true;
+                }
+            }
+            if (!DuplicatePerson)
+            {
+                break;
+            }
+        }
+        return randomPersonData;
     }
 }

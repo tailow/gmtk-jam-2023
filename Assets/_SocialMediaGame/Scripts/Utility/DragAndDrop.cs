@@ -54,8 +54,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 
         _draggingObject.localScale *= 1.1f;
 
-        GameManager.Instance.CurrentDraggingObject = _draggingObject.gameObject;
-        
         _canvasGroup.blocksRaycasts = false; // otherwise dragged object blocks raycast for drop target
         
         DisableHighlightEvent?.Invoke();
@@ -69,8 +67,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         _desiredPosition = transform.parent.position;
         
         _canvasGroup.blocksRaycasts = true;
-
-        //GameManager.Instance.CurrentDraggingObject = null;   // we should probably do this, but it gets executed before drop event
     }
 
     public void OnPointerEnter(PointerEventData eventData)
