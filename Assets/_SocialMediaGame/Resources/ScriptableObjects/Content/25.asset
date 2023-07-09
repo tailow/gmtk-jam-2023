@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: 25
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: Got Tunas?
+  description: '#wet #melodic'
+  sprite: {fileID: 21300000, guid: 19c63b2ff5de37c4c8d05d91d24dd45a, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 689b8d24a0c7bfe449acb65c1c08399b, type: 2}
+    weight: 0.5
+  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
+    weight: 1
