@@ -16,8 +16,11 @@ public class MainMenuButtons : MonoBehaviour
         float volume;
 
         FMODUnity.RuntimeManager.GetBus("bus:/").getVolume(out volume);
-        
-        volumeSlider.value = volume;
+
+        if (volumeSlider)
+        {
+            volumeSlider.value = volume;
+        }
     }
 
     public void LoadMainScene()
