@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3442418258095990103}
   - component: {fileID: 7502710515501580644}
   - component: {fileID: 5908451854525207280}
+  - component: {fileID: 6493200316280640496}
   m_Layer: 5
   m_Name: PersonCard
   m_TagString: Untagged
@@ -143,6 +144,22 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: -1
   OverrideMaxDistance: -1
+--- !u!111 &6493200316280640496
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119220098501183490}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1886cbe78ab7e9943bb27dc8c4069a05, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1886cbe78ab7e9943bb27dc8c4069a05, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &846263306626704348
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.54610187, g: 0.5684704, b: 0.6132076, a: 1}
+  m_Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2169,7 +2186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 0.45490196}
+  m_Color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

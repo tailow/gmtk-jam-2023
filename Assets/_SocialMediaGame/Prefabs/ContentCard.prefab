@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 2353535380559573103}
   - component: {fileID: 2247741446454525204}
   - component: {fileID: 4704420778603406951}
+  - component: {fileID: 4912697339010583070}
   m_Layer: 5
   m_Name: ContentCard
   m_TagString: Untagged
@@ -252,6 +253,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!111 &4912697339010583070
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052090855333524325}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 011b8979d46b9094780cdde65f8d0f81, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 011b8979d46b9094780cdde65f8d0f81, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3921124129828277865
 GameObject:
   m_ObjectHideFlags: 0

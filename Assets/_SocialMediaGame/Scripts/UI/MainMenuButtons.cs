@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,16 @@ using UnityEngine.UI;
 public class MainMenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject _tutorialPanel;
-    [SerializeField] private Scrollbar volumeSlider;
+    [SerializeField] private Slider volumeSlider;
+
+    private void Start()
+    {
+        float volume;
+
+        FMODUnity.RuntimeManager.GetBus("bus:/").getVolume(out volume);
+        
+        volumeSlider.value = volume;
+    }
 
     public void LoadMainScene()
     {
