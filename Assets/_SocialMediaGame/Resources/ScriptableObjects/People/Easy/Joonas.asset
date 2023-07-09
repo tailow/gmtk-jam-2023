@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Joonas
   m_EditorClassIdentifier: 
   personName: Joonas
-  sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 9332139d13d3f8b4d9e5320aef426a44, type: 3}
   icon: {fileID: 21300000, guid: c7a1405513ef3204b817a3528483e7c2, type: 3}
   globalDrainRate: 0.3
   traits:
