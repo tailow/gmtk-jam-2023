@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: 30
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: Music Theory
+  description: '#rip lemmy'
+  sprite: {fileID: 21300000, guid: b44c5dfc78e5d144aae6276158fcead6, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 99e3e36947d0a434ba75ce8b5de95e17, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 48f59e397f320754f8075c6d26a5351b, type: 2}
+    weight: 1

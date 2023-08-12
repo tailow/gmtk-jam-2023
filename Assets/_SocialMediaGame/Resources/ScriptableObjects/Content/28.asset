@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: 28
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: PlatnetFitness Membership
+  description: '#247 #gains'
+  sprite: {fileID: 21300000, guid: d799c2ae1bb6bf646a5011bbb1ec955c, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: 7996917adfed1f042812931bd3b8adcf, type: 2}
+    weight: 1.5
+  - traitScriptableObject: {fileID: 11400000, guid: 6c51e07cfe9b1954c9621fc63a2b9fad, type: 2}
+    weight: 1

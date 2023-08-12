@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5692f2f598f24074b88bc4a0d94ff3b9, type: 3}
   m_Name: 33
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  sprite: {fileID: 0}
-  traits: []
+  title: Thunder McKIng
+  description: lighting vs thunder
+  sprite: {fileID: 21300000, guid: 7c66c90775d818546adb9970c43ec816, type: 3}
+  traits:
+  - traitScriptableObject: {fileID: 11400000, guid: d74a0320b03fc4c42abd703853609cb3, type: 2}
+    weight: 1
+  - traitScriptableObject: {fileID: 11400000, guid: 0f1eb13a3cca471478c85d6dda8a4e2c, type: 2}
+    weight: 0.8
+  - traitScriptableObject: {fileID: 11400000, guid: 4f14075cd5c3413479f009315c2e904e, type: 2}
+    weight: 0.1
